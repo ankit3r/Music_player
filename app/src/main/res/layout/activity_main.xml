@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/light"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp">
+
+            <TextView
+                android:id="@+id/txtFavorit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/ripple"
+                android:gravity="center"
+                android:text="@string/favorite"
+                app:drawableTopCompat="@drawable/ic_favorite_music" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/light"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp">
+
+            <TextView
+                android:id="@+id/txtPlayList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:background="@drawable/ripple"
+                android:text="@string/playlist"
+                app:drawableTint="@color/white"
+                app:drawableTopCompat="@drawable/ic_playlist" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/light"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp">
+
+            <TextView
+                android:id="@+id/txtRecent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:background="@drawable/ripple"
+                android:text="@string/recent"
+                app:drawableTint="@color/white"
+                app:drawableTopCompat="@drawable/ic_music" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:minHeight="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="6dp"
+                android:layout_toStartOf="@id/btnSearch"
+                android:autofillHints="true"
+                android:hint="@string/search"
+                android:inputType="textAutoComplete"
+                android:minHeight="48dp"
+                android:imeOptions="actionSearch"/>
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/light"
+                android:contentDescription="@string/search"
+                android:minHeight="48dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_search" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:contentDescription="@string/player"
+        app:cardBackgroundColor="@color/light"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/imgPoster"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:lottie_fileName="music_disk.json"
+                app:lottie_autoPlay="false"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/image_poster"
+                app:lottie_loop="true" />
+
+
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/imgPoster"
+                android:ellipsize="marquee"
+                android:maxLines="1"
+                android:gravity="center"
+                android:text="@string/player"
+                android:textSize="18sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toEndOf="@id/imgPoster"
+                android:progress="20" />
+
+            <TextView
+                android:id="@+id/txtRtimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekBar"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/imgPoster"
+                android:text="@string/timer"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekBar"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:text="@string/timer"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTimer"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/imgPoster"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:backgroundTint="@color/light"
+                    android:contentDescription="@string/search"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_skip_previous"
+                    app:tint="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/btnPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:backgroundTint="@color/light"
+                    android:contentDescription="@string/search"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_play"
+                    app:tint="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/btnNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:backgroundTint="@color/light"
+                    android:contentDescription="@string/search"
+                    android:minHeight="48dp"
+                    android:src="@drawable/ic_skip_next"
+                    app:tint="@color/white" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/frameHolder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
